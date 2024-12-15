@@ -1,0 +1,31 @@
+// String a heap-allocated, growable and mutable string
+//String is an owns the data it holds (Owned type)
+//Use Case: Used when you need 
+//a string that can change in size or when you need to own and modify string data.
+
+
+Characteristics:
+Stored on the heap.
+Can grow or shrink in size dynamically.
+Supports various methods for mutation (e.g., push, push_str).
+
+ &str
+Definition: A borrowed, immutable slice of a string.
+Ownership: A &str is a borrowed reference and does not own the data.
+Use Case: Used for passing around string data without taking ownership, especially when working with string literals or immutable references.
+Characteristics:
+Usually stored in the stack (if it's a string literal) or references data on the heap (if it's derived from a String or other sources).
+Immutable (cannot be modified).
+Often referred to as a string slice.
+
+When to Use Which?
+Use String:
+
+When you need ownership of the string.
+When you need to modify the string.
+When you are working with dynamically generated or user-provided string data.
+Use &str:
+
+When you only need a reference to string data without taking ownership.
+When working with string literals (e.g., "Hello").
+When you need to pass a string to a function that doesn’t require ownership.
