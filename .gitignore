@@ -13,3 +13,5 @@
 
 # Ignore Node.js files if applicable
 node_modules/
+
+*.txt

@@ -1,9 +1,17 @@
+use std::sync::Arc;
+
 use axum::{extract::{Json, Path}, http::header::DATE, response::Json as AxumJson};
+use mongodb::Collection;
 use crate::models::user::{User, UserResponseObject};
 use crate::views::user_view::{success_response_format, user_response_format};
 
+//Atomically Reference Counted DB Alias
+
 
 pub async fn create_user(Json(payload): Json<User>) -> AxumJson<String> {
+
+
+    
 
     let user = User {
         id: payload.id,
